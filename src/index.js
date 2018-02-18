@@ -9,12 +9,13 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+// Initialize Firebase
 const config = {
   apiKey: 'AIzaSyDrzKn5dQGcbyW5dthYuUCs53oswggB4PQ',
   authDomain: 'react-phones.firebaseapp.com',
   databaseURL: 'https://react-phones.firebaseio.com',
   projectId: 'react-phones',
-  storageBucket: '',
+  storageBucket: 'react-phones.appspot.com',
   messagingSenderId: '989699814667',
 };
 firebase.initializeApp(config);

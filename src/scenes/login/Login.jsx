@@ -3,6 +3,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import CircularProgress from 'material-ui/CircularProgress';
 import Dialog from 'material-ui/Dialog';
 import firebase from 'firebase';
+import { withRouter } from 'react-router-dom';
 
 import { CardImage, GoogleSvg } from '../../components';
 
@@ -18,6 +19,12 @@ class Login extends Component {
     };
   }
 
+  componentWillMount() {
+    if (sessionStorage.getItem('userEmail')) {
+      this.props.history.push('/contacts');
+    }
+  }
+
   handleAuth = () => {
     this.setState({ isLoading: true });
 
@@ -27,8 +34,12 @@ class Login extends Component {
       .auth()
       .signInWithPopup(provider)
       .then(snap => {
-        // TODO - redirect to contacts
-        console.log(snap.user);
+        const { email, photoURL } = snap.user;
+        sessionStorage.setItem('userEmail', email);
+        sessionStorage.setItem('userPhoto', photoURL);
+
+        /* eslint react/prop-types: 0 */
+        this.props.history.push('/contacts');
       })
       .catch(err => {
         this.setState({
@@ -73,4 +84,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);
