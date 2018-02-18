@@ -1,0 +1,43 @@
+{
+  "name": "react-phonebook",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
+    "firebase": "4.10.0",
+    "material-ui": "0.20.0",
+    "moment": "2.20.1",
+    "prop-types": "15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "4.2.2",
+    "react-scripts": "1.1.1",
+    "react-test-renderer": "16.2.0",
+    "reset-css": "2.2.1",
+    "uuid": "3.2.1"
+  },
+  "scripts": {
+    "precommit": "lint-staged && npm run lint",
+    "lint": "eslint src --ext .js,.jsx",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "4.17.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-prettier": "2.6.0",
+    "husky": "0.14.3",
+    "lint-staged": "6.1.0",
+    "prettier": "1.10.2"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
