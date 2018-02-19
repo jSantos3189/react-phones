@@ -125,7 +125,7 @@ class AddContact extends Component {
     } else {
       this.setState({
         openSnackbar: true,
-        snackbarMessage: 'All fields are reqired!',
+        snackbarMessage: 'All fields are required!',
       });
     }
   };
@@ -140,6 +140,7 @@ class AddContact extends Component {
             top: '1em',
             right: '1em',
             zIndex: '2',
+            backgroundColor: 'rgb(13, 71, 161)',
           }}
           onClick={this.openDialog}
         >

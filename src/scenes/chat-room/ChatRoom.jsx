@@ -10,7 +10,6 @@ class ChatRoom extends Component {
   constructor() {
     super();
     this.state = {
-      id: uuid(),
       sender: {
         email: sessionStorage.getItem('userEmail'),
         photo: sessionStorage.getItem('userPhoto'),
@@ -32,10 +31,10 @@ class ChatRoom extends Component {
 
   handleNewMessage = () => {
     const db = firebase.database().ref('chatroom');
-    const { id, sender, newMessage } = this.state;
+    const { sender, newMessage } = this.state;
     const message = {
       sender,
-      id,
+      id: uuid(),
       message: newMessage,
     };
     this.setState({ newMessage: '' });

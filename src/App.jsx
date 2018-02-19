@@ -47,6 +47,11 @@ class App extends Component {
     this.props.history.push('/chat-room');
   };
 
+  handleContacts = () => {
+    /* eslint react/prop-types: 0 */
+    this.props.history.push('/contacts');
+  };
+
   render() {
     return (
       <main>
@@ -59,6 +64,11 @@ class App extends Component {
             }
             iconElementRight={
               <div>
+                <IconButton onClick={this.handleContacts}>
+                  <FontIcon color="white" className="material-icons">
+                    contacts
+                  </FontIcon>
+                </IconButton>
                 <IconButton onClick={this.handleChatRoom}>
                   <FontIcon color="white" className="material-icons">
                     message
